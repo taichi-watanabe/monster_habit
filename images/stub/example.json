@@ -1,0 +1,207 @@
+{
+  "users": [
+    {
+      "uuid": 1,
+      "name": "string",
+      "imageUrl": "string",
+      "type": "String"
+    },
+    {
+      "uuid": 2,
+      "name": "string",
+      "imageUrl": "string",
+      "type": "String"
+    },
+    {
+      "uuid": 3,
+      "name": "string",
+      "imageUrl": "string",
+      "type": "String"
+    }
+  ],
+
+  "userStatus": [
+    {
+      "uuid": 1,
+      "level": 0,
+      "life": 3,
+      "nextLevelP": 0
+    },
+    {
+      "uuid": 2,
+      "level": 0,
+      "life": 3,
+      "nextLevelP": 0
+    },
+    {
+      "uuid": 3,
+      "level": 0,
+      "life": 3,
+      "nextLevelP": 0
+    }
+  ],
+
+  "objectives": {
+    "uuid_1": [
+      {
+        "id": 1,
+        "title": "string",
+        "memo": "string",
+        "exPoint": 0,
+        "end_at": "2023/10/21",
+        "begin_at": "2023/10/21",
+        "monsterUrl": "string",
+        "status": "running,failure,achievement",
+        "tasks": [
+          {
+            "taskName": "task1",
+            "taskPoint": 0
+          },
+          {
+            "taskName": "task2",
+            "taskPoint": 0
+          },
+          {
+            "taskName": "task3",
+            "taskPoint": 0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "string",
+        "memo": "string",
+        "exPoint": 0,
+        "end_at": "2023/10/21",
+        "begin_at": "2023/10/21",
+        "monsterUrl": "string",
+        "status": "running,failure,achievement",
+        "tasks": [
+          {
+            "taskName": "task1",
+            "taskPoint": 0
+          },
+          {
+            "taskName": "task2",
+            "taskPoint": 0
+          },
+          {
+            "taskName": "task3",
+            "taskPoint": 0
+          }
+        ]
+      }
+    ],
+    "uuid_2": [
+      {
+        "id": 2,
+        "title": "string",
+        "memo": "string",
+        "exPoint": 0,
+        "end_at": "2023/10/21",
+        "begin_at": "2023/10/21",
+        "monsterUrl": "string",
+        "status": "running,failure,achievement",
+        "tasks": [
+          {
+            "taskName": "task1",
+            "taskPoint": 0
+          },
+          {
+            "taskName": "task2",
+            "taskPoint": 0
+          },
+          {
+            "taskName": "task3",
+            "taskPoint": 0
+          }
+        ]
+      }
+    ],
+    "uuid_3": [
+      {
+        "id": 1,
+        "title": "string",
+        "memo": "string",
+        "exPoint": 0,
+        "end_at": "2023/10/21",
+        "begin_at": "2023/10/21",
+        "monsterUrl": "string",
+        "status": "running,failure,achievement",
+        "tasks": [
+          {
+            "taskName": "task1",
+            "taskPoint": 0
+          },
+          {
+            "taskName": "task2",
+            "taskPoint": 0
+          },
+          {
+            "taskName": "task3",
+            "taskPoint": 0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "string",
+        "memo": "string",
+        "exPoint": 0,
+        "end_at": "2023/10/21",
+        "begin_at": "2023/10/21",
+        "monsterUrl": "string",
+        "status": "running,failure,achievement",
+        "tasks": [
+          {
+            "taskName": "task1",
+            "taskPoint": 0
+          },
+          {
+            "taskName": "task2",
+            "taskPoint": 0
+          },
+          {
+            "taskName": "task3",
+            "taskPoint": 0
+          }
+        ]
+      }
+    ]
+  },
+
+  "caputureBook": {
+    "uuid_1": [
+      {
+        "name": "string",
+        "endAt": "string",
+        "monsterUrl": "string",
+        "tasknum": 0,
+        "taskP": 0
+      },
+      {
+        "name": "string",
+        "endAt": "string",
+        "monsterUrl": "string",
+        "tasknum": 0,
+        "taskP": 0
+      }
+    ],
+    "uuid_2": [
+      {
+        "name": "string",
+        "endAt": "string",
+        "monsterUrl": "string",
+        "tasknum": 0,
+        "taskP": 0
+      },
+      {
+        "name": "string",
+        "endAt": "string",
+        "monsterUrl": "string",
+        "tasknum": 0,
+        "taskP": 0
+      }
+    ]
+  }
+}

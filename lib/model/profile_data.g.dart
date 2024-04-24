@@ -6,24 +6,27 @@ part of 'profile_data.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ProfileData _$$_ProfileDataFromJson(Map<String, dynamic> json) =>
-    _$_ProfileData(
+_$ProfileDataImpl _$$ProfileDataImplFromJson(Map<String, dynamic> json) =>
+    _$ProfileDataImpl(
       userName: json['userName'] as String,
       userJob: json['userJob'] as String,
-      uuid: json['uuid'] as String,
-      userLevel: json['userLevel'] as int,
-      nextLevelPoint: json['nextLevelPoint'] as int,
-      life: json['life'] as int,
-      profileImageUrl: json['profileImageUrl'] as String?,
+      uuid: json['uuid'] as String?,
+      userImageUrl: json['userImageUrl'] as String?,
+      objectives: (json['objectives'] as List<dynamic>?)
+          ?.map((e) => ObjectivesData.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      usersStatus: json['usersStatus'] == null
+          ? null
+          : UsersStatusData.fromJson(
+              json['usersStatus'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_ProfileDataToJson(_$_ProfileData instance) =>
+Map<String, dynamic> _$$ProfileDataImplToJson(_$ProfileDataImpl instance) =>
     <String, dynamic>{
       'userName': instance.userName,
       'userJob': instance.userJob,
       'uuid': instance.uuid,
-      'userLevel': instance.userLevel,
-      'nextLevelPoint': instance.nextLevelPoint,
-      'life': instance.life,
-      'profileImageUrl': instance.profileImageUrl,
+      'userImageUrl': instance.userImageUrl,
+      'objectives': instance.objectives,
+      'usersStatus': instance.usersStatus,
     };

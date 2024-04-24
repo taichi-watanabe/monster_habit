@@ -1,5 +1,5 @@
 enum ObjectiveStatusType {
-  runnning(title: '実行中'),
+  running(title: '実行中'),
   achievement(title: '達成'),
   failure(title: '失敗');
 

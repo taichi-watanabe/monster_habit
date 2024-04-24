@@ -1,20 +1,25 @@
-{
-  "objectives": [
-    {
-      "mokuhyoTitle": "３キロ痩せる",
-      "monsterUrl": "images/Halloween-24.png",
-      "end_at": "2023-07-01T00:00:00.000+9:00",
-      "begin_at": "2023-06-01T00:00:00.000+9:00",
-      "status": "達成",
-      "mokuhyoPoint": 94
-    },
-    {
-      "mokuhyoTitle": "酒カスになる",
-      "monsterUrl": "images/Halloween-24.png",
-      "end_at": "2023-07-01T00:00:00.000+9:00",
-      "begin_at": "2023-06-01T00:00:00.000+9:00",
-      "status": "失敗",
-      "mokuhyoPoint": 0
-    }
-  ]
-}
+[
+  {
+    "mokuhyoTitle": "３キロ痩せる",
+    "monsterUrl": "images/Halloween-24.png",
+    "end_at": "2023/10/21",
+    "begin_at": "2023/10/21",
+    "status": "achievement",
+    "mokuhyoPoint": 94
+  },
+  {
+    "mokuhyoTitle": "酒カスになる",
+    "monsterUrl": "images/Halloween-24.png",
+    "end_at": "2023/10/21",
+    "begin_at": "2023/10/21",
+    "status": "failure",
+    "mokuhyoPoint": 0
+  },
+  {
+    "mokuhyoTitle": "ソファを買う",
+    "monsterUrl": "images/Halloween-24.png",
+    "begin_at": "2023/10/21",
+    "status": "running",
+    "mokuhyoPoint": 0
+  }
+]

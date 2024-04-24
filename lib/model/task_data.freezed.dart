@@ -20,8 +20,11 @@ TaskData _$TaskDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TaskData {
-  String get taskTitle => throw _privateConstructorUsedError;
-  int get exPoint => throw _privateConstructorUsedError;
+  String? get taskTitle => throw _privateConstructorUsedError;
+  String? get status => throw _privateConstructorUsedError;
+  double? get exPoint => throw _privateConstructorUsedError;
+  int? get objectiveId => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +37,12 @@ abstract class $TaskDataCopyWith<$Res> {
   factory $TaskDataCopyWith(TaskData value, $Res Function(TaskData) then) =
       _$TaskDataCopyWithImpl<$Res, TaskData>;
   @useResult
-  $Res call({String taskTitle, int exPoint});
+  $Res call(
+      {String? taskTitle,
+      String? status,
+      double? exPoint,
+      int? objectiveId,
+      int? id});
 }
 
 /// @nodoc
@@ -50,75 +58,118 @@ class _$TaskDataCopyWithImpl<$Res, $Val extends TaskData>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? taskTitle = null,
-    Object? exPoint = null,
+    Object? taskTitle = freezed,
+    Object? status = freezed,
+    Object? exPoint = freezed,
+    Object? objectiveId = freezed,
+    Object? id = freezed,
   }) {
     return _then(_value.copyWith(
-      taskTitle: null == taskTitle
+      taskTitle: freezed == taskTitle
           ? _value.taskTitle
           : taskTitle // ignore: cast_nullable_to_non_nullable
-              as String,
-      exPoint: null == exPoint
+              as String?,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      exPoint: freezed == exPoint
           ? _value.exPoint
           : exPoint // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double?,
+      objectiveId: freezed == objectiveId
+          ? _value.objectiveId
+          : objectiveId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_TaskDataCopyWith<$Res> implements $TaskDataCopyWith<$Res> {
-  factory _$$_TaskDataCopyWith(
-          _$_TaskData value, $Res Function(_$_TaskData) then) =
-      __$$_TaskDataCopyWithImpl<$Res>;
+abstract class _$$TaskDataImplCopyWith<$Res>
+    implements $TaskDataCopyWith<$Res> {
+  factory _$$TaskDataImplCopyWith(
+          _$TaskDataImpl value, $Res Function(_$TaskDataImpl) then) =
+      __$$TaskDataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String taskTitle, int exPoint});
+  $Res call(
+      {String? taskTitle,
+      String? status,
+      double? exPoint,
+      int? objectiveId,
+      int? id});
 }
 
 /// @nodoc
-class __$$_TaskDataCopyWithImpl<$Res>
-    extends _$TaskDataCopyWithImpl<$Res, _$_TaskData>
-    implements _$$_TaskDataCopyWith<$Res> {
-  __$$_TaskDataCopyWithImpl(
-      _$_TaskData _value, $Res Function(_$_TaskData) _then)
+class __$$TaskDataImplCopyWithImpl<$Res>
+    extends _$TaskDataCopyWithImpl<$Res, _$TaskDataImpl>
+    implements _$$TaskDataImplCopyWith<$Res> {
+  __$$TaskDataImplCopyWithImpl(
+      _$TaskDataImpl _value, $Res Function(_$TaskDataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? taskTitle = null,
-    Object? exPoint = null,
+    Object? taskTitle = freezed,
+    Object? status = freezed,
+    Object? exPoint = freezed,
+    Object? objectiveId = freezed,
+    Object? id = freezed,
   }) {
-    return _then(_$_TaskData(
-      taskTitle: null == taskTitle
+    return _then(_$TaskDataImpl(
+      taskTitle: freezed == taskTitle
           ? _value.taskTitle
           : taskTitle // ignore: cast_nullable_to_non_nullable
-              as String,
-      exPoint: null == exPoint
+              as String?,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      exPoint: freezed == exPoint
           ? _value.exPoint
           : exPoint // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double?,
+      objectiveId: freezed == objectiveId
+          ? _value.objectiveId
+          : objectiveId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_TaskData with DiagnosticableTreeMixin implements _TaskData {
-  const _$_TaskData({required this.taskTitle, required this.exPoint});
+class _$TaskDataImpl with DiagnosticableTreeMixin implements _TaskData {
+  const _$TaskDataImpl(
+      {this.taskTitle, this.status, this.exPoint, this.objectiveId, this.id});
 
-  factory _$_TaskData.fromJson(Map<String, dynamic> json) =>
-      _$$_TaskDataFromJson(json);
+  factory _$TaskDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TaskDataImplFromJson(json);
 
   @override
-  final String taskTitle;
+  final String? taskTitle;
   @override
-  final int exPoint;
+  final String? status;
+  @override
+  final double? exPoint;
+  @override
+  final int? objectiveId;
+  @override
+  final int? id;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TaskData(taskTitle: $taskTitle, exPoint: $exPoint)';
+    return 'TaskData(taskTitle: $taskTitle, status: $status, exPoint: $exPoint, objectiveId: $objectiveId, id: $id)';
   }
 
   @override
@@ -127,32 +178,40 @@ class _$_TaskData with DiagnosticableTreeMixin implements _TaskData {
     properties
       ..add(DiagnosticsProperty('type', 'TaskData'))
       ..add(DiagnosticsProperty('taskTitle', taskTitle))
-      ..add(DiagnosticsProperty('exPoint', exPoint));
+      ..add(DiagnosticsProperty('status', status))
+      ..add(DiagnosticsProperty('exPoint', exPoint))
+      ..add(DiagnosticsProperty('objectiveId', objectiveId))
+      ..add(DiagnosticsProperty('id', id));
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TaskData &&
+            other is _$TaskDataImpl &&
             (identical(other.taskTitle, taskTitle) ||
                 other.taskTitle == taskTitle) &&
-            (identical(other.exPoint, exPoint) || other.exPoint == exPoint));
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.exPoint, exPoint) || other.exPoint == exPoint) &&
+            (identical(other.objectiveId, objectiveId) ||
+                other.objectiveId == objectiveId) &&
+            (identical(other.id, id) || other.id == id));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, taskTitle, exPoint);
+  int get hashCode =>
+      Object.hash(runtimeType, taskTitle, status, exPoint, objectiveId, id);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TaskDataCopyWith<_$_TaskData> get copyWith =>
-      __$$_TaskDataCopyWithImpl<_$_TaskData>(this, _$identity);
+  _$$TaskDataImplCopyWith<_$TaskDataImpl> get copyWith =>
+      __$$TaskDataImplCopyWithImpl<_$TaskDataImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TaskDataToJson(
+    return _$$TaskDataImplToJson(
       this,
     );
   }
@@ -160,17 +219,27 @@ class _$_TaskData with DiagnosticableTreeMixin implements _TaskData {
 
 abstract class _TaskData implements TaskData {
   const factory _TaskData(
-      {required final String taskTitle,
-      required final int exPoint}) = _$_TaskData;
+      {final String? taskTitle,
+      final String? status,
+      final double? exPoint,
+      final int? objectiveId,
+      final int? id}) = _$TaskDataImpl;
 
-  factory _TaskData.fromJson(Map<String, dynamic> json) = _$_TaskData.fromJson;
+  factory _TaskData.fromJson(Map<String, dynamic> json) =
+      _$TaskDataImpl.fromJson;
 
   @override
-  String get taskTitle;
+  String? get taskTitle;
   @override
-  int get exPoint;
+  String? get status;
+  @override
+  double? get exPoint;
+  @override
+  int? get objectiveId;
+  @override
+  int? get id;
   @override
   @JsonKey(ignore: true)
-  _$$_TaskDataCopyWith<_$_TaskData> get copyWith =>
+  _$$TaskDataImplCopyWith<_$TaskDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

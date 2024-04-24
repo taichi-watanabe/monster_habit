@@ -6,13 +6,20 @@ part of 'task_data.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TaskData _$$_TaskDataFromJson(Map<String, dynamic> json) => _$_TaskData(
-      taskTitle: json['taskTitle'] as String,
-      exPoint: json['exPoint'] as int,
+_$TaskDataImpl _$$TaskDataImplFromJson(Map<String, dynamic> json) =>
+    _$TaskDataImpl(
+      taskTitle: json['taskTitle'] as String?,
+      status: json['status'] as String?,
+      exPoint: (json['exPoint'] as num?)?.toDouble(),
+      objectiveId: json['objectiveId'] as int?,
+      id: json['id'] as int?,
     );
 
-Map<String, dynamic> _$$_TaskDataToJson(_$_TaskData instance) =>
+Map<String, dynamic> _$$TaskDataImplToJson(_$TaskDataImpl instance) =>
     <String, dynamic>{
       'taskTitle': instance.taskTitle,
+      'status': instance.status,
       'exPoint': instance.exPoint,
+      'objectiveId': instance.objectiveId,
+      'id': instance.id,
     };
