@@ -54,7 +54,7 @@ class ChatPage extends HookConsumerWidget {
                       );
                     },
                     error: (error, stackTrace) => const Center(
-                      child: Text('エラーが発生しました'),
+                      child: Text('エラーが発生しました。'),
                     ),
                   ));
         });
