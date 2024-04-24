@@ -11,6 +11,7 @@ var messageDataRepositoryProvider = Provider<MessageDataRepository>(
 abstract class MessageDataRepository {
   MessageDataRepository();
   Stream<List<MessageData>> getChatMessageStream(String uuid);
+  Future<void> submitMessage(MessageData data);
   /*Future<ProfileData?> postProfileData(ProfileData profile);
   Future<ProfileData?> fetchUser(String id);
   Future<ProfileData> fetchHomePageData(String id, WidgetRef ref);

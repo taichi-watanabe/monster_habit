@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ChatPageItems {
-  String get content => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -30,7 +30,7 @@ abstract class $ChatPageItemsCopyWith<$Res> {
           ChatPageItems value, $Res Function(ChatPageItems) then) =
       _$ChatPageItemsCopyWithImpl<$Res, ChatPageItems>;
   @useResult
-  $Res call({String content, bool isLoading});
+  $Res call({String message, bool isLoading});
 }
 
 /// @nodoc
@@ -46,13 +46,13 @@ class _$ChatPageItemsCopyWithImpl<$Res, $Val extends ChatPageItems>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? content = null,
+    Object? message = null,
     Object? isLoading = null,
   }) {
     return _then(_value.copyWith(
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
               as String,
       isLoading: null == isLoading
           ? _value.isLoading
@@ -70,7 +70,7 @@ abstract class _$$ChatPageItemsImplCopyWith<$Res>
       __$$ChatPageItemsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String content, bool isLoading});
+  $Res call({String message, bool isLoading});
 }
 
 /// @nodoc
@@ -84,13 +84,13 @@ class __$$ChatPageItemsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? content = null,
+    Object? message = null,
     Object? isLoading = null,
   }) {
     return _then(_$ChatPageItemsImpl(
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
               as String,
       isLoading: null == isLoading
           ? _value.isLoading
@@ -103,18 +103,18 @@ class __$$ChatPageItemsImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ChatPageItemsImpl implements _ChatPageItems {
-  _$ChatPageItemsImpl({this.content = '', this.isLoading = false});
+  _$ChatPageItemsImpl({this.message = '', this.isLoading = false});
 
   @override
   @JsonKey()
-  final String content;
+  final String message;
   @override
   @JsonKey()
   final bool isLoading;
 
   @override
   String toString() {
-    return 'ChatPageItems(content: $content, isLoading: $isLoading)';
+    return 'ChatPageItems(message: $message, isLoading: $isLoading)';
   }
 
   @override
@@ -122,13 +122,13 @@ class _$ChatPageItemsImpl implements _ChatPageItems {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ChatPageItemsImpl &&
-            (identical(other.content, content) || other.content == content) &&
+            (identical(other.message, message) || other.message == message) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, content, isLoading);
+  int get hashCode => Object.hash(runtimeType, message, isLoading);
 
   @JsonKey(ignore: true)
   @override
@@ -138,11 +138,11 @@ class _$ChatPageItemsImpl implements _ChatPageItems {
 }
 
 abstract class _ChatPageItems implements ChatPageItems {
-  factory _ChatPageItems({final String content, final bool isLoading}) =
+  factory _ChatPageItems({final String message, final bool isLoading}) =
       _$ChatPageItemsImpl;
 
   @override
-  String get content;
+  String get message;
   @override
   bool get isLoading;
   @override

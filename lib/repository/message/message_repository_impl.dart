@@ -14,11 +14,8 @@ class MessageDataRepositoryImpl implements MessageDataRepository {
     return _messageRegisterDataSource.getChatMessageStream(uuid);
   }
 
-  /*@override
-  Future<ProfileData?> postProfileData(ProfileData profile) async {
-    return await _userRegisterDataSource.postProfileData(profile);
+  @override
+  Future<void> submitMessage(MessageData data) async {
+    return await _messageRegisterDataSource.submitMessage(data);
   }
-
-  
-  }*/
 }
