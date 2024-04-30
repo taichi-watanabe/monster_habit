@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:monster_habit/model/message_data.dart';
+import 'package:monster_habit/model/profile_data.dart';
 import 'package:monster_habit/repository/message/message_repository.dart';
 
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -34,6 +35,28 @@ class ChatPageNotifier extends _$ChatPageNotifier {
     }
   }
 
+  Future<void> checkMessagesId(List<MessageData> messages) async {
+    try {
+      for (final message in messages) {
+        if (state.profileCache[message.profileId] == null) {
+          final profile = await ref
+              .watch(messageDataRepositoryProvider)
+              .loadProfileCache(message.profileId!);
+
+          state = state.copyWith(
+            profileCache: {
+              ...state.profileCache,
+              message.profileId!: profile,
+            },
+          );
+        }
+      }
+    } catch (e) {
+      print('Error submitMessage' + e.toString());
+      rethrow;
+    }
+  }
+
   void resetState() {
     state = state.copyWith(message: '');
   }
@@ -47,5 +70,6 @@ class ChatPageItems with _$ChatPageItems {
   factory ChatPageItems({
     @Default('') String message,
     @Default(false) bool isLoading,
+    @Default({}) Map<String, ProfileData> profileCache,
   }) = _ChatPageItems;
 }

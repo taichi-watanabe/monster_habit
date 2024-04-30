@@ -40,6 +40,10 @@ extension DateTimeExtension on DateTime {
     return DateFormat('yyyy/MM/dd(E) HH:mm', 'ja_JP').format(this);
   }
 
+  String formatTimeString() {
+    return DateFormat('HH:mm', 'ja_JP').format(this);
+  }
+
   String commaDelimited() {
     return '$year.$month.$day';
   }

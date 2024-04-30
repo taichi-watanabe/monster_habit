@@ -18,6 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ChatPageItems {
   String get message => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
+  Map<String, ProfileData> get profileCache =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ChatPageItemsCopyWith<ChatPageItems> get copyWith =>
@@ -30,7 +32,8 @@ abstract class $ChatPageItemsCopyWith<$Res> {
           ChatPageItems value, $Res Function(ChatPageItems) then) =
       _$ChatPageItemsCopyWithImpl<$Res, ChatPageItems>;
   @useResult
-  $Res call({String message, bool isLoading});
+  $Res call(
+      {String message, bool isLoading, Map<String, ProfileData> profileCache});
 }
 
 /// @nodoc
@@ -48,6 +51,7 @@ class _$ChatPageItemsCopyWithImpl<$Res, $Val extends ChatPageItems>
   $Res call({
     Object? message = null,
     Object? isLoading = null,
+    Object? profileCache = null,
   }) {
     return _then(_value.copyWith(
       message: null == message
@@ -58,6 +62,10 @@ class _$ChatPageItemsCopyWithImpl<$Res, $Val extends ChatPageItems>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      profileCache: null == profileCache
+          ? _value.profileCache
+          : profileCache // ignore: cast_nullable_to_non_nullable
+              as Map<String, ProfileData>,
     ) as $Val);
   }
 }
@@ -70,7 +78,8 @@ abstract class _$$ChatPageItemsImplCopyWith<$Res>
       __$$ChatPageItemsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String message, bool isLoading});
+  $Res call(
+      {String message, bool isLoading, Map<String, ProfileData> profileCache});
 }
 
 /// @nodoc
@@ -86,6 +95,7 @@ class __$$ChatPageItemsImplCopyWithImpl<$Res>
   $Res call({
     Object? message = null,
     Object? isLoading = null,
+    Object? profileCache = null,
   }) {
     return _then(_$ChatPageItemsImpl(
       message: null == message
@@ -96,6 +106,10 @@ class __$$ChatPageItemsImplCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      profileCache: null == profileCache
+          ? _value._profileCache
+          : profileCache // ignore: cast_nullable_to_non_nullable
+              as Map<String, ProfileData>,
     ));
   }
 }
@@ -103,7 +117,11 @@ class __$$ChatPageItemsImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ChatPageItemsImpl implements _ChatPageItems {
-  _$ChatPageItemsImpl({this.message = '', this.isLoading = false});
+  _$ChatPageItemsImpl(
+      {this.message = '',
+      this.isLoading = false,
+      final Map<String, ProfileData> profileCache = const {}})
+      : _profileCache = profileCache;
 
   @override
   @JsonKey()
@@ -111,10 +129,18 @@ class _$ChatPageItemsImpl implements _ChatPageItems {
   @override
   @JsonKey()
   final bool isLoading;
+  final Map<String, ProfileData> _profileCache;
+  @override
+  @JsonKey()
+  Map<String, ProfileData> get profileCache {
+    if (_profileCache is EqualUnmodifiableMapView) return _profileCache;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_profileCache);
+  }
 
   @override
   String toString() {
-    return 'ChatPageItems(message: $message, isLoading: $isLoading)';
+    return 'ChatPageItems(message: $message, isLoading: $isLoading, profileCache: $profileCache)';
   }
 
   @override
@@ -124,11 +150,14 @@ class _$ChatPageItemsImpl implements _ChatPageItems {
             other is _$ChatPageItemsImpl &&
             (identical(other.message, message) || other.message == message) &&
             (identical(other.isLoading, isLoading) ||
-                other.isLoading == isLoading));
+                other.isLoading == isLoading) &&
+            const DeepCollectionEquality()
+                .equals(other._profileCache, _profileCache));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message, isLoading);
+  int get hashCode => Object.hash(runtimeType, message, isLoading,
+      const DeepCollectionEquality().hash(_profileCache));
 
   @JsonKey(ignore: true)
   @override
@@ -138,13 +167,17 @@ class _$ChatPageItemsImpl implements _ChatPageItems {
 }
 
 abstract class _ChatPageItems implements ChatPageItems {
-  factory _ChatPageItems({final String message, final bool isLoading}) =
-      _$ChatPageItemsImpl;
+  factory _ChatPageItems(
+      {final String message,
+      final bool isLoading,
+      final Map<String, ProfileData> profileCache}) = _$ChatPageItemsImpl;
 
   @override
   String get message;
   @override
   bool get isLoading;
+  @override
+  Map<String, ProfileData> get profileCache;
   @override
   @JsonKey(ignore: true)
   _$$ChatPageItemsImplCopyWith<_$ChatPageItemsImpl> get copyWith =>
