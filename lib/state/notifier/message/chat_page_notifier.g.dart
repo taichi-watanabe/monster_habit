@@ -6,7 +6,7 @@ part of 'chat_page_notifier.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$chatPageNotifierHash() => r'8f71b6616cbf3b8aee9601d3627ae7b0bc645b1f';
+String _$chatPageNotifierHash() => r'b017530381fae22d4bbfbb39fff17431184ded7d';
 
 /// See also [ChatPageNotifier].
 @ProviderFor(ChatPageNotifier)

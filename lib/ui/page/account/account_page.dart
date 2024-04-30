@@ -242,7 +242,7 @@ class AccountPage extends HookConsumerWidget {
         _AccountListItem(
             title: 'お問い合わせ（チャット）',
             icon: 'icon_information.svg',
-            onTapCallBack: () => context.router.push(const ChatRoute())),
+            onTapCallBack: () => context.router.push(ChatRoute())),
         _AccountListItem(
             title: 'お問い合わせ（メール）',
             icon: 'icon_mail.svg',

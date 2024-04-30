@@ -156,5 +156,138 @@ class _GetMessageDataProviderElement
   @override
   String get id => (origin as GetMessageDataProvider).id;
 }
+
+String _$cacheProfileDataHash() => r'9b3da715f3a1fab0207dbe80f0e951796a10093d';
+
+/// See also [cacheProfileData].
+@ProviderFor(cacheProfileData)
+const cacheProfileDataProvider = CacheProfileDataFamily();
+
+/// See also [cacheProfileData].
+class CacheProfileDataFamily
+    extends Family<AsyncValue<Map<String, ProfileData>>> {
+  /// See also [cacheProfileData].
+  const CacheProfileDataFamily();
+
+  /// See also [cacheProfileData].
+  CacheProfileDataProvider call(
+    List<MessageData> data,
+  ) {
+    return CacheProfileDataProvider(
+      data,
+    );
+  }
+
+  @override
+  CacheProfileDataProvider getProviderOverride(
+    covariant CacheProfileDataProvider provider,
+  ) {
+    return call(
+      provider.data,
+    );
+  }
+
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'cacheProfileDataProvider';
+}
+
+/// See also [cacheProfileData].
+class CacheProfileDataProvider
+    extends AutoDisposeFutureProvider<Map<String, ProfileData>> {
+  /// See also [cacheProfileData].
+  CacheProfileDataProvider(
+    List<MessageData> data,
+  ) : this._internal(
+          (ref) => cacheProfileData(
+            ref as CacheProfileDataRef,
+            data,
+          ),
+          from: cacheProfileDataProvider,
+          name: r'cacheProfileDataProvider',
+          debugGetCreateSourceHash:
+              const bool.fromEnvironment('dart.vm.product')
+                  ? null
+                  : _$cacheProfileDataHash,
+          dependencies: CacheProfileDataFamily._dependencies,
+          allTransitiveDependencies:
+              CacheProfileDataFamily._allTransitiveDependencies,
+          data: data,
+        );
+
+  CacheProfileDataProvider._internal(
+    super._createNotifier, {
+    required super.name,
+    required super.dependencies,
+    required super.allTransitiveDependencies,
+    required super.debugGetCreateSourceHash,
+    required super.from,
+    required this.data,
+  }) : super.internal();
+
+  final List<MessageData> data;
+
+  @override
+  Override overrideWith(
+    FutureOr<Map<String, ProfileData>> Function(CacheProfileDataRef provider)
+        create,
+  ) {
+    return ProviderOverride(
+      origin: this,
+      override: CacheProfileDataProvider._internal(
+        (ref) => create(ref as CacheProfileDataRef),
+        from: from,
+        name: null,
+        dependencies: null,
+        allTransitiveDependencies: null,
+        debugGetCreateSourceHash: null,
+        data: data,
+      ),
+    );
+  }
+
+  @override
+  AutoDisposeFutureProviderElement<Map<String, ProfileData>> createElement() {
+    return _CacheProfileDataProviderElement(this);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return other is CacheProfileDataProvider && other.data == data;
+  }
+
+  @override
+  int get hashCode {
+    var hash = _SystemHash.combine(0, runtimeType.hashCode);
+    hash = _SystemHash.combine(hash, data.hashCode);
+
+    return _SystemHash.finish(hash);
+  }
+}
+
+mixin CacheProfileDataRef
+    on AutoDisposeFutureProviderRef<Map<String, ProfileData>> {
+  /// The parameter `data` of this provider.
+  List<MessageData> get data;
+}
+
+class _CacheProfileDataProviderElement
+    extends AutoDisposeFutureProviderElement<Map<String, ProfileData>>
+    with CacheProfileDataRef {
+  _CacheProfileDataProviderElement(super.provider);
+
+  @override
+  List<MessageData> get data => (origin as CacheProfileDataProvider).data;
+}
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
